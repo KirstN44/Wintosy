@@ -55,4 +55,20 @@ export const GATEWAY_ITEMS: GatewayItem[] = [
       blobColor: 'bg-emerald-200/30',
     },
   },
+  {
+    id: 'printables',
+    title: 'Printables',
+    emoji: '🖨️',
+    description: 'Downloadable worksheets, templates, educational planners, and craft resources ready for print.',
+    buttonText: 'Explore Printables →',
+    url: 'https://spelling-writing-worksheet.pages.dev/',
+    watercolorAccent: {
+      iconBg: 'bg-purple-50 text-purple-900',
+      iconRing: 'ring-purple-200/70',
+      buttonBg: 'bg-slate-900 text-slate-50 hover:bg-slate-800',
+      buttonHover: 'hover:shadow-purple-900/10',
+      subtleGlow: 'from-purple-100/50 via-purple-50/20 to-transparent',
+      blobColor: 'bg-purple-200/30',
+    },
+  },
 ];
