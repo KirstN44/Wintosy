@@ -1,6 +1,0 @@
-{
-  "name": "Wintosy",
-  "description": "A quiet corner for real life. Master gateway to Life & Business OS, Stitch Minded, and Sprout Lab.",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
-}
