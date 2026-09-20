@@ -1,21 +1,274 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wintosy — A quiet corner for real life</title>
-    <meta name="description" content="A quiet corner for real life. Built with care for creators, parents, and crafters." />
-    <meta property="og:title" content="Wintosy — A quiet corner for real life" />
-    <meta property="og:description" content="A quiet corner for real life. Built with care for creators, parents, and crafters." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  </head>
-  <body class="bg-[#FAF7F2] text-stone-800 antialiased selection:bg-amber-200/60 selection:text-stone-900 min-h-screen">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wintosy — A quiet corner for real life</title>
+  <meta name="description" content="A quiet corner for real life. Built with care for creators, parents, and crafters." />
+  <meta property="og:title" content="Wintosy — A quiet corner for real life" />
+  <meta property="og:description" content="A quiet corner for real life. Built with care for creators, parents, and crafters." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
 
+  <!-- Google Fonts: Playfair Display + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Embedded Whimsical Watercolor Styles -->
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .font-serif-title {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+    .watercolor-blob {
+      border-radius: 60% 40% 50% 50% / 50% 60% 40% 50%;
+      filter: blur(52px);
+    }
+    .watercolor-card {
+      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.96), rgba(253, 251, 247, 0.98));
+      box-shadow: 0 10px 30px -5px rgba(180, 160, 140, 0.08), 0 4px 12px -2px rgba(180, 160, 140, 0.04);
+    }
+    @keyframes float-subtle {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-6px) rotate(1deg);
+      }
+    }
+    .animate-float {
+      animation: float-subtle 8s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body class="relative min-h-screen flex flex-col justify-between overflow-x-hidden bg-[#FAF7F2] text-stone-800 antialiased selection:bg-amber-200/60 selection:text-stone-900">
+
+  <!-- Whimsical Watercolor Organic Washes (Background) -->
+  <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+    <div class="watercolor-blob absolute -top-24 -left-20 h-96 w-96 bg-amber-200/40 opacity-70 animate-float"></div>
+    <div class="watercolor-blob absolute top-12 -right-24 h-[420px] w-[420px] bg-rose-200/35 opacity-60 animate-float" style="animation-delay: -3s;"></div>
+    <div class="watercolor-blob absolute top-1/2 left-1/3 h-[500px] w-[500px] -translate-x-1/2 bg-indigo-100/45 opacity-50 animate-float" style="animation-delay: -5s;"></div>
+    <div class="watercolor-blob absolute -bottom-32 right-10 h-96 w-96 bg-emerald-100/40 opacity-55 animate-float" style="animation-delay: -2s;"></div>
+  </div>
+
+  <div class="relative z-10 flex flex-col flex-1">
+    
+    <!-- 1. Top Navigation Bar (Centered "Wintosy" Brand Name) -->
+    <header id="main-header" class="relative z-20 w-full py-6 sm:py-8 text-center">
+      <div class="mx-auto flex max-w-5xl items-center justify-center px-4 sm:px-6">
+        <a href="#" id="brand-logo" class="group inline-flex items-center gap-2.5 transition-transform duration-300 hover:scale-[1.02] focus:outline-none">
+          <div class="relative flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-amber-200/80 via-rose-200/80 to-indigo-200/80 p-0.5 shadow-sm">
+            <div class="flex h-full w-full items-center justify-center rounded-full bg-white/90">
+              <span class="font-serif-title text-base font-bold italic text-stone-800">W</span>
+            </div>
+          </div>
+          <span class="font-serif-title text-2xl sm:text-3xl font-bold tracking-tight text-stone-900">
+            Wintosy
+          </span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col justify-center">
+
+      <!-- 2. Centered Hero Section -->
+      <section id="hero-section" class="relative px-4 pt-4 pb-8 sm:px-6 md:pt-6 md:pb-12 text-center">
+        <div class="relative mx-auto max-w-2xl">
+          <!-- Small "Welcome to Wintosy" Tag/Pill -->
+          <div class="inline-flex items-center gap-1.5 rounded-full border border-amber-200/80 bg-gradient-to-r from-amber-50/90 via-rose-50/80 to-indigo-50/90 px-4 py-1.5 text-xs font-medium text-stone-700 shadow-sm mb-6">
+            <span>✨</span>
+            <span id="hero-pill-text">Welcome to Wintosy</span>
+          </div>
+
+          <!-- Main Headline: "A quiet corner for real life." -->
+          <h1 id="hero-title" class="font-serif-title text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.15] mb-5">
+            A quiet corner <br class="hidden sm:inline" />
+            <span class="italic font-normal text-stone-700">for real life.</span>
+          </h1>
+
+          <!-- Welcoming Paragraph -->
+          <p id="hero-description" class="mx-auto max-w-xl text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
+            A gentle collection of intentional digital spaces designed to simplify your everyday routines, nurture your fiber craft sanctuary, explore ready-to-print resources, and inspire playful early learning.
+          </p>
+        </div>
+      </section>
+
+      <!-- 3. Gateway Cards Section (Responsive Grid) -->
+      <section id="gateways-section" aria-label="Wintosy Gateways" class="mx-auto w-full max-w-7xl px-4 sm:px-6 py-4 md:py-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="gateways-container">
+
+          <!-- Card 1: Life & Business OS -->
+          <div id="gateway-card-life-business-os" class="group relative flex flex-col justify-between rounded-3xl border border-stone-200/90 bg-white/95 p-7 watercolor-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-amber-300/80">
+            <div class="pointer-events-none absolute -right-4 -top-4 h-28 w-28 rounded-full bg-amber-200/30 blur-2xl opacity-60 transition-opacity duration-300 group-hover:opacity-100"></div>
+            <div class="relative z-10">
+              <div class="mb-5">
+                <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl text-2xl shadow-sm ring-4 bg-amber-100/80 text-amber-900 ring-amber-200/70 transition-transform duration-300 group-hover:scale-105">
+                  <span class="select-none">📋</span>
+                </div>
+              </div>
+              <h2 id="gateway-title-life-business-os" class="font-serif-title text-2xl font-semibold text-stone-900 tracking-tight mb-2.5">
+                Life & Business OS
+              </h2>
+              <p id="gateway-desc-life-business-os" class="text-stone-600 text-sm leading-relaxed font-normal mb-6">
+                Your everyday command center for family schedules, client tasks, action boards, and quiet productivity.
+              </p>
+            </div>
+            <div class="relative z-10 pt-2">
+              <a href="https://life-business-os.pages.dev/" target="_blank" rel="noopener noreferrer" id="gateway-btn-life-business-os" class="flex w-full items-center justify-center rounded-2xl bg-stone-900 px-5 py-3.5 text-sm font-semibold text-stone-50 transition-all duration-200 shadow-sm hover:bg-stone-800">
+                <span>Open Life OS →</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: Stitch Minded -->
+          <div id="gateway-card-stitch-minded" class="group relative flex flex-col justify-between rounded-3xl border border-stone-200/90 bg-white/95 p-7 watercolor-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-rose-300/80">
+            <div class="pointer-events-none absolute -right-4 -top-4 h-28 w-28 rounded-full bg-rose-200/30 blur-2xl opacity-60 transition-opacity duration-300 group-hover:opacity-100"></div>
+            <div class="relative z-10">
+              <div class="mb-5">
+                <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl text-2xl shadow-sm ring-4 bg-rose-100/80 text-rose-900 ring-rose-200/70 transition-transform duration-300 group-hover:scale-105">
+                  <span class="select-none">🧶</span>
+                </div>
+              </div>
+              <h2 id="gateway-title-stitch-minded" class="font-serif-title text-2xl font-semibold text-stone-900 tracking-tight mb-2.5">
+                Stitch Minded
+              </h2>
+              <p id="gateway-desc-stitch-minded" class="text-stone-600 text-sm leading-relaxed font-normal mb-6">
+                A digital craft sanctuary showcasing fiber arts, stitch patterns, blog tutorials, and interactive tools like your beanie calculator.
+              </p>
+            </div>
+            <div class="relative z-10 pt-2">
+              <a href="https://stitch-minded.pages.dev/" target="_blank" rel="noopener noreferrer" id="gateway-btn-stitch-minded" class="flex w-full items-center justify-center rounded-2xl bg-stone-900 px-5 py-3.5 text-sm font-semibold text-stone-50 transition-all duration-200 shadow-sm hover:bg-stone-800">
+                <span>Explore Stitch Minded →</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3: Sprout Lab -->
+          <div id="gateway-card-sprout-lab" class="group relative flex flex-col justify-between rounded-3xl border border-stone-200/90 bg-white/95 p-7 watercolor-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-300/80">
+            <div class="pointer-events-none absolute -right-4 -top-4 h-28 w-28 rounded-full bg-emerald-200/30 blur-2xl opacity-60 transition-opacity duration-300 group-hover:opacity-100"></div>
+            <div class="relative z-10">
+              <div class="mb-5">
+                <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl text-2xl shadow-sm ring-4 bg-emerald-100/80 text-emerald-900 ring-emerald-200/70 transition-transform duration-300 group-hover:scale-105">
+                  <span class="select-none">🚀</span>
+                </div>
+              </div>
+              <h2 id="gateway-title-sprout-lab" class="font-serif-title text-2xl font-semibold text-stone-900 tracking-tight mb-2.5">
+                Sprout Lab
+              </h2>
+              <p id="gateway-desc-sprout-lab" class="text-stone-600 text-sm leading-relaxed font-normal mb-6">
+                Interactive educational games like Word Orbit and Maths Orbit designed with text-to-speech for early learners.
+              </p>
+            </div>
+            <div class="relative z-10 pt-2">
+              <a href="https://sprout-lab.pages.dev/" target="_blank" rel="noopener noreferrer" id="gateway-btn-sprout-lab" class="flex w-full items-center justify-center rounded-2xl bg-stone-900 px-5 py-3.5 text-sm font-semibold text-stone-50 transition-all duration-200 shadow-sm hover:bg-stone-800">
+                <span>Play Educational Apps →</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 4: Printables -->
+          <div id="gateway-card-printables" class="group relative flex flex-col justify-between rounded-3xl border border-stone-200/90 bg-white/95 p-7 watercolor-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-indigo-300/80">
+            <div class="pointer-events-none absolute -right-4 -top-4 h-28 w-28 rounded-full bg-indigo-200/30 blur-2xl opacity-60 transition-opacity duration-300 group-hover:opacity-100"></div>
+            <div class="relative z-10">
+              <div class="mb-5">
+                <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl text-2xl shadow-sm ring-4 bg-indigo-100/80 text-indigo-900 ring-indigo-200/70 transition-transform duration-300 group-hover:scale-105">
+                  <span class="select-none">📄</span>
+                </div>
+              </div>
+              <h2 id="gateway-title-printables" class="font-serif-title text-2xl font-semibold text-stone-900 tracking-tight mb-2.5">
+                Printables
+              </h2>
+              <p id="gateway-desc-printables" class="text-stone-600 text-sm leading-relaxed font-normal mb-6">
+                Beautifully crafted printable planners, mindful daily sheets, craft trackers, and early learning activity cards.
+              </p>
+            </div>
+            <div class="relative z-10 pt-2">
+              <a href="https://printables.pages.dev/" target="_blank" rel="noopener noreferrer" id="gateway-btn-printables" class="flex w-full items-center justify-center rounded-2xl bg-stone-900 px-5 py-3.5 text-sm font-semibold text-stone-50 transition-all duration-200 shadow-sm hover:bg-stone-800">
+                <span>Explore Printables →</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 4. Clean Footer -->
+    <footer id="main-footer" class="mt-16 sm:mt-24 border-t border-stone-200/80 bg-[#FAF7F2]/80 py-10 px-4 sm:px-6 relative z-10">
+      <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 md:flex-row">
+        
+        <!-- Left Side: Title & Subtext -->
+        <div class="text-center md:text-left">
+          <div class="flex items-center justify-center md:justify-start gap-2 mb-1">
+            <span id="footer-title" class="font-serif-title text-2xl font-bold tracking-tight text-stone-900">
+              Wintosy
+            </span>
+          </div>
+          <p id="footer-subtext" class="text-sm text-stone-600 font-normal">
+            Built with care for creators, parents, and crafters.
+          </p>
+        </div>
+
+        <!-- Right Side: PayPal Support & Contact Me -->
+        <div class="flex flex-wrap items-center justify-center gap-3">
+          <!-- PayPal Support Button -->
+          <a href="https://www.paypal.com/paypalme/wintosy" target="_blank" rel="noopener noreferrer" id="footer-paypal-btn" class="group inline-flex items-center gap-2 rounded-xl border border-stone-200 bg-white/90 px-4 py-2.5 text-xs sm:text-sm font-medium text-stone-700 shadow-sm hover:border-amber-300 hover:bg-amber-50/60 hover:text-stone-900 transition-all duration-200">
+            <svg class="h-4 w-4 text-rose-500 fill-rose-500/20 transition-transform group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            </svg>
+            <span>Support via PayPal</span>
+          </a>
+
+          <!-- Contact Me Button -->
+          <a href="mailto:Wintosyway@gmail.com" id="footer-contact-btn" class="inline-flex items-center gap-2 rounded-xl border border-indigo-200 bg-indigo-50/80 px-4 py-2.5 text-xs sm:text-sm font-medium text-indigo-950 shadow-sm hover:bg-indigo-100 hover:border-indigo-300 transition-all duration-200">
+            <svg class="h-4 w-4 text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="16" x="2" y="4" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+            <span>Contact Me</span>
+          </a>
+        </div>
+
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Inline Lightweight Interactions -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Smooth subtle hover feedback for cards
+      const cards = document.querySelectorAll('.watercolor-card');
+      cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          card.style.transform = 'translateY(-6px)';
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'translateY(0px)';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
