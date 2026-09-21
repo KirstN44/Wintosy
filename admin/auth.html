@@ -7,18 +7,17 @@
 <body>
   <script>
     (function() {
-      function receiveMessage(e) {
+      const receiveMessage = (message) => {
         window.opener.postMessage(
-          'authorization:github:success:' + JSON.stringify({
-            token: window.location.hash.match(/access_token=([^&]*)/)[1],
-            provider: 'github'
-          }),
-          e.origin
+          `authorization:github:success:${JSON.stringify({
+            token: window.location.hash.match(/access_token=([^&]*)/)?.[1],
+            provider: "github"
+          })}`,
+          window.location.origin
         );
         window.close();
-      }
-      window.addEventListener("message", receiveMessage, false);
-      window.opener.postMessage("authorization:github:success", "*");
+      };
+      receiveMessage();
     })();
   </script>
 </body>
