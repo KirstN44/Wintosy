@@ -9,12 +9,12 @@
   <meta property="og:description" content="A quiet corner for real life. Built with care for creators, parents, and crafters." />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary_large_image" />
-
+  
   <!-- Google Fonts: Playfair Display + Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
+  
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -47,19 +47,14 @@
       box-shadow: 0 10px 30px -5px rgba(180, 160, 140, 0.08), 0 4px 12px -2px rgba(180, 160, 140, 0.04);
     }
     @keyframes float-subtle {
-      0%, 100% {
-        transform: translateY(0px) rotate(0deg);
-      }
-      50% {
-        transform: translateY(-6px) rotate(1deg);
-      }
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-6px) rotate(1deg); }
     }
     .animate-float {
       animation: float-subtle 8s ease-in-out infinite;
     }
   </style>
 </head>
-
 <body class="relative min-h-screen flex flex-col justify-between overflow-x-hidden bg-[#FAF7F2] text-stone-800 antialiased selection:bg-amber-200/60 selection:text-stone-900">
 
   <!-- Whimsical Watercolor Organic Washes (Background) -->
@@ -72,7 +67,7 @@
 
   <div class="relative z-10 flex flex-col flex-1">
     
-    <!-- 1. Top Navigation Bar (Centered "Wintosy" Brand Name) -->
+    <!-- 1. Top Navigation Bar -->
     <header id="main-header" class="relative z-20 w-full py-6 sm:py-8 text-center">
       <div class="mx-auto flex max-w-5xl items-center justify-center px-4 sm:px-6">
         <a href="#" id="brand-logo" class="group inline-flex items-center gap-2.5 transition-transform duration-300 hover:scale-[1.02] focus:outline-none">
@@ -90,7 +85,7 @@
 
     <!-- Main Content -->
     <main class="flex-1 flex flex-col justify-center">
-
+      
       <!-- 2. Centered Hero Section -->
       <section id="hero-section" class="relative px-4 pt-4 pb-8 sm:px-6 md:pt-6 md:pb-12 text-center">
         <div class="relative mx-auto max-w-2xl">
@@ -99,71 +94,25 @@
             <span>✨</span>
             <span id="hero-pill-text">Welcome to Wintosy</span>
           </div>
-
-          <!-- Main Headline: "A quiet corner for real life." -->
+          
+          <!-- Main Headline -->
           <h1 id="hero-title" class="font-serif-title text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.15] mb-5">
             A quiet corner <br class="hidden sm:inline" />
             <span class="italic font-normal text-stone-700">for real life.</span>
           </h1>
-
+          
           <!-- Welcoming Paragraph -->
           <p id="hero-description" class="mx-auto max-w-xl text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
-            A gentle collection of intentional digital spaces designed to simplify your everyday routines, nurture your fiber craft sanctuary, explore ready-to-print resources, and inspire playful early learning.
+            A gentle collection of intentional spaces designed to inspire playful early learning and explore ready-to-print family resources.
           </p>
         </div>
       </section>
 
-      <!-- 3. Gateway Cards Section (Responsive Grid) -->
-      <section id="gateways-section" aria-label="Wintosy Gateways" class="mx-auto w-full max-w-7xl px-4 sm:px-6 py-4 md:py-6">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="gateways-container">
+      <!-- 3. Gateway Cards Section (2-Column Grid for Sprout Lab & Printables) -->
+      <section id="gateways-section" aria-label="Wintosy Gateways" class="mx-auto w-full max-w-4xl px-4 sm:px-6 py-4 md:py-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6" id="gateways-container">
 
-          <!-- Card 1: Life & Business OS -->
-          <div id="gateway-card-life-business-os" class="group relative flex flex-col justify-between rounded-3xl border border-stone-200/90 bg-white/95 p-7 watercolor-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-amber-300/80">
-            <div class="pointer-events-none absolute -right-4 -top-4 h-28 w-28 rounded-full bg-amber-200/30 blur-2xl opacity-60 transition-opacity duration-300 group-hover:opacity-100"></div>
-            <div class="relative z-10">
-              <div class="mb-5">
-                <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl text-2xl shadow-sm ring-4 bg-amber-100/80 text-amber-900 ring-amber-200/70 transition-transform duration-300 group-hover:scale-105">
-                  <span class="select-none">📋</span>
-                </div>
-              </div>
-              <h2 id="gateway-title-life-business-os" class="font-serif-title text-2xl font-semibold text-stone-900 tracking-tight mb-2.5">
-                Life & Business OS
-              </h2>
-              <p id="gateway-desc-life-business-os" class="text-stone-600 text-sm leading-relaxed font-normal mb-6">
-                Your everyday command center for family schedules, client tasks, action boards, and quiet productivity.
-              </p>
-            </div>
-            <div class="relative z-10 pt-2">
-              <a href="https://life-business-os.pages.dev/" target="_blank" rel="noopener noreferrer" id="gateway-btn-life-business-os" class="flex w-full items-center justify-center rounded-2xl bg-stone-900 px-5 py-3.5 text-sm font-semibold text-stone-50 transition-all duration-200 shadow-sm hover:bg-stone-800">
-                <span>Open Life OS →</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Card 2: Stitch Minded -->
-          <div id="gateway-card-stitch-minded" class="group relative flex flex-col justify-between rounded-3xl border border-stone-200/90 bg-white/95 p-7 watercolor-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-rose-300/80">
-            <div class="pointer-events-none absolute -right-4 -top-4 h-28 w-28 rounded-full bg-rose-200/30 blur-2xl opacity-60 transition-opacity duration-300 group-hover:opacity-100"></div>
-            <div class="relative z-10">
-              <div class="mb-5">
-                <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl text-2xl shadow-sm ring-4 bg-rose-100/80 text-rose-900 ring-rose-200/70 transition-transform duration-300 group-hover:scale-105">
-                  <span class="select-none">🧶</span>
-                </div>
-              </div>
-              <h2 id="gateway-title-stitch-minded" class="font-serif-title text-2xl font-semibold text-stone-900 tracking-tight mb-2.5">
-                Stitch Minded
-              </h2>
-              <p id="gateway-desc-stitch-minded" class="text-stone-600 text-sm leading-relaxed font-normal mb-6">
-                A digital craft sanctuary showcasing fiber arts, stitch patterns, blog tutorials, and interactive tools like your beanie calculator.
-              </p>
-            </div>
-            <div class="relative z-10 pt-2">
-              <a href="https://stitch-minded.pages.dev/" target="_blank" rel="noopener noreferrer" id="gateway-btn-stitch-minded" class="flex w-full items-center justify-center rounded-2xl bg-stone-900 px-5 py-3.5 text-sm font-semibold text-stone-50 transition-all duration-200 shadow-sm hover:bg-stone-800">
-                <span>Explore Stitch Minded →</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Card 3: Sprout Lab -->
+          <!-- Card 1: Sprout Lab -->
           <div id="gateway-card-sprout-lab" class="group relative flex flex-col justify-between rounded-3xl border border-stone-200/90 bg-white/95 p-7 watercolor-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-300/80">
             <div class="pointer-events-none absolute -right-4 -top-4 h-28 w-28 rounded-full bg-emerald-200/30 blur-2xl opacity-60 transition-opacity duration-300 group-hover:opacity-100"></div>
             <div class="relative z-10">
@@ -186,7 +135,7 @@
             </div>
           </div>
 
-          <!-- Card 4: Printables -->
+          <!-- Card 2: Printables -->
           <div id="gateway-card-printables" class="group relative flex flex-col justify-between rounded-3xl border border-stone-200/90 bg-white/95 p-7 watercolor-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-indigo-300/80">
             <div class="pointer-events-none absolute -right-4 -top-4 h-28 w-28 rounded-full bg-indigo-200/30 blur-2xl opacity-60 transition-opacity duration-300 group-hover:opacity-100"></div>
             <div class="relative z-10">
@@ -199,7 +148,7 @@
                 Printables
               </h2>
               <p id="gateway-desc-printables" class="text-stone-600 text-sm leading-relaxed font-normal mb-6">
-                Beautifully crafted printable planners, mindful daily sheets, craft trackers, and early learning activity cards.
+                Beautifully crafted printable planners, mindful daily sheets, and early learning activity cards.
               </p>
             </div>
             <div class="relative z-10 pt-2">
@@ -211,13 +160,11 @@
 
         </div>
       </section>
-
     </main>
 
     <!-- 4. Clean Footer -->
-    <footer id="main-footer" class="mt-16 sm:mt-24 border-t border-stone-200/80 bg-[#FAF7F2]/80 py-10 px-4 sm:px-6 relative z-10">
+    <footer id="main-header" class="mt-16 sm:mt-24 border-t border-stone-200/80 bg-[#FAF7F2]/80 py-10 px-4 sm:px-6 relative z-10">
       <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 md:flex-row">
-        
         <!-- Left Side: Title & Subtext -->
         <div class="text-center md:text-left">
           <div class="flex items-center justify-center md:justify-start gap-2 mb-1">
@@ -226,7 +173,7 @@
             </span>
           </div>
           <p id="footer-subtext" class="text-sm text-stone-600 font-normal">
-            Built with care for creators, parents, and crafters.
+            Built with care for creators, parents, and kids.
           </p>
         </div>
 
@@ -239,26 +186,23 @@
             </svg>
             <span>Support via PayPal</span>
           </a>
-
+          
           <!-- Contact Me Button -->
           <a href="mailto:Wintosyway@gmail.com" id="footer-contact-btn" class="inline-flex items-center gap-2 rounded-xl border border-indigo-200 bg-indigo-50/80 px-4 py-2.5 text-xs sm:text-sm font-medium text-indigo-950 shadow-sm hover:bg-indigo-100 hover:border-indigo-300 transition-all duration-200">
-            <svg class="h-4 w-4 text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="h-4 w-4 text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="25">
               <rect width="20" height="16" x="2" y="4" rx="2"/>
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
             </svg>
             <span>Contact Me</span>
           </a>
         </div>
-
       </div>
     </footer>
-
   </div>
 
   <!-- Inline Lightweight Interactions -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // Smooth subtle hover feedback for cards
       const cards = document.querySelectorAll('.watercolor-card');
       cards.forEach(card => {
         card.addEventListener('mouseenter', () => {
