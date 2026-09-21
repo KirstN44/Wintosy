@@ -4,19 +4,3 @@ backend:
   branch: main
   auth_type: implicit
   app_id: Ov23liDcXFDm0rRHDQcN
-  site_url: https://wintosy.pages.dev
-
-media_folder: "assets/images"
-public_folder: "/assets/images"
-
-collections:
-  - name: "blog"
-    label: "Wintosy Blog"
-    folder: "content/blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description / Excerpt", name: "description", widget: "text"}
-      - {label: "Body", name: "body", widget: "markdown"}
