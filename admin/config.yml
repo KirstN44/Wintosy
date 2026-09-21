@@ -1,24 +1,21 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <title>Authenticating...</title>
-</head>
-<body>
-  <script>
-    (function() {
-      const receiveMessage = (message) => {
-        window.opener.postMessage(
-          `authorization:github:success:${JSON.stringify({
-            token: window.location.hash.match(/access_token=([^&]*)/)?.[1],
-            provider: "github"
-          })}`,
-          window.location.origin
-        );
-        window.close();
-      };
-      receiveMessage();
-    })();
-  </script>
-</body>
-</html>
+backend:
+  name: github
+  repo: KirstN44/Wintosy
+  branch: main
+  auth_type: implicit
+  app_id: Ov23liDcXFDm0rRHDQcN
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "blog"
+    label: "Wintosy Blog"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Description / Excerpt", name: "description", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
