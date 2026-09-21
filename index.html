@@ -86,74 +86,160 @@
     <!-- Main Content -->
     <main class="flex-1 flex flex-col justify-center">
       
-      <!-- 2. Centered Hero Section -->
-      <section id="hero-section" class="relative px-4 pt-4 pb-8 sm:px-6 md:pt-6 md:pb-12 text-center">
+      <!-- 2. Centered Hero Section (Book Contents Vibe) -->
+      <section id="hero-section" class="relative px-4 pt-2 pb-8 sm:px-6 md:pt-4 md:pb-10 text-center">
         <div class="relative mx-auto max-w-2xl">
-          <!-- Small "Welcome to Wintosy" Tag/Pill -->
-          <div class="inline-flex items-center gap-1.5 rounded-full border border-amber-200/80 bg-gradient-to-r from-amber-50/90 via-rose-50/80 to-indigo-50/90 px-4 py-1.5 text-xs font-medium text-stone-700 shadow-sm mb-6">
-            <span>✨</span>
-            <span id="hero-pill-text">Welcome to Wintosy</span>
+          <div class="inline-flex items-center gap-1.5 rounded-full border border-amber-200/80 bg-gradient-to-r from-amber-50/90 via-rose-50/80 to-indigo-50/90 px-4 py-1.5 text-xs font-medium text-stone-700 shadow-sm mb-5">
+            <span>📖</span>
+            <span id="hero-pill-text">Table of Contents</span>
           </div>
           
-          <!-- Main Headline -->
-          <h1 id="hero-title" class="font-serif-title text-4xl sm:text-5xl md:text-6xl font-normal tracking-tight text-stone-900 leading-[1.15] mb-5">
+          <h1 id="hero-title" class="font-serif-title text-4xl sm:text-5xl font-normal tracking-tight text-stone-900 leading-[1.15] mb-4">
             A quiet corner <br class="hidden sm:inline" />
             <span class="italic font-normal text-stone-700">for real life.</span>
           </h1>
           
-          <!-- Welcoming Paragraph -->
-          <p id="hero-description" class="mx-auto max-w-xl text-base sm:text-lg text-stone-600 leading-relaxed font-normal">
-            A gentle collection of intentional spaces designed for playful early learning and thoughtful family rhythms.
+          <p id="hero-description" class="mx-auto max-w-xl text-base text-stone-600 leading-relaxed font-normal">
+            Select a section below to explore interactive learning apps, intentional family printables, and personal reflections.
           </p>
         </div>
       </section>
 
-      <!-- 3. Gateway Cards Section (2-Column Grid for Kids' Corner & Mom & Home Space) -->
-      <section id="gateways-section" aria-label="Wintosy Gateways" class="mx-auto w-full max-w-4xl px-4 sm:px-6 py-4 md:py-6">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6" id="gateways-container">
+      <!-- 3. Gateway Cards Section (3-Column Grid) -->
+      <section id="gateways-section" aria-label="Wintosy Sections" class="mx-auto w-full max-w-6xl px-4 sm:px-6 py-2 md:py-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="gateways-container">
 
           <!-- Card 1: Kids' Corner -->
-          <div id="gateway-card-kids-corner" class="group relative flex flex-col justify-between rounded-3xl border border-stone-200/90 bg-white/95 p-7 watercolor-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-300/80">
+          <div id="gateway-card-kids-corner" class="group relative flex flex-col justify-between rounded-3xl border border-stone-200/90 bg-white/95 p-6 sm:p-7 watercolor-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-emerald-300/80">
             <div class="pointer-events-none absolute -right-4 -top-4 h-28 w-28 rounded-full bg-emerald-200/30 blur-2xl opacity-60 transition-opacity duration-300 group-hover:opacity-100"></div>
             <div class="relative z-10">
-              <div class="mb-5">
-                <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl text-2xl shadow-sm ring-4 bg-emerald-100/80 text-emerald-900 ring-emerald-200/70 transition-transform duration-300 group-hover:scale-105">
+              <div class="mb-4">
+                <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl text-xl shadow-sm ring-4 bg-emerald-100/80 text-emerald-900 ring-emerald-200/70">
                   <span class="select-none">🚀</span>
                 </div>
               </div>
-              <h2 id="gateway-title-kids-corner" class="font-serif-title text-2xl font-semibold text-stone-900 tracking-tight mb-2.5">
+              <h2 class="font-serif-title text-2xl font-semibold text-stone-900 tracking-tight mb-2">
                 Kids' Corner
               </h2>
-              <p id="gateway-desc-kids-corner" class="text-stone-600 text-sm leading-relaxed font-normal mb-6">
-                Explore interactive web apps (like Sprout Lab) alongside engaging, printable learning activities and fun worksheets.
+              <p class="text-stone-600 text-xs sm:text-sm leading-relaxed font-normal mb-5">
+                Playful learning spaces designed for early growth, structured writing, and joyful discovery.
               </p>
+
+              <!-- Sub-links / Contents List -->
+              <ul class="space-y-2.5 border-t border-stone-100 pt-4 mb-6 text-sm text-stone-700">
+                <li>
+                  <a href="https://sprout-lab.pages.dev/" target="_blank" rel="noopener noreferrer" class="group/link flex items-center justify-between hover:text-emerald-700 transition-colors">
+                    <span class="font-medium">Interactive Educational Apps</span>
+                    <span class="text-xs text-stone-400 group-hover/link:translate-x-0.5 transition-transform">→</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://spelling-and-writing-practice-worksheet.pages.dev/" target="_blank" rel="noopener noreferrer" class="group/link flex items-center justify-between hover:text-emerald-700 transition-colors">
+                    <span class="font-medium">Educational Printables</span>
+                    <span class="text-xs text-stone-400 group-hover/link:translate-x-0.5 transition-transform">→</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="group/link flex items-center justify-between hover:text-emerald-700 transition-colors">
+                    <span class="font-medium">Fun Printable Activities</span>
+                    <span class="text-xs text-stone-400 group-hover/link:translate-x-0.5 transition-transform">→</span>
+                  </a>
+                </li>
+              </ul>
             </div>
             <div class="relative z-10 pt-2">
-              <a href="https://sprout-lab.pages.dev/" target="_blank" rel="noopener noreferrer" id="gateway-btn-kids-corner" class="flex w-full items-center justify-center rounded-2xl bg-stone-900 px-5 py-3.5 text-sm font-semibold text-stone-50 transition-all duration-200 shadow-sm hover:bg-stone-800">
-                <span>Explore Kids' Corner →</span>
+              <a href="https://sprout-lab.pages.dev/" target="_blank" rel="noopener noreferrer" class="flex w-full items-center justify-center rounded-2xl bg-stone-900 px-4 py-3 text-xs sm:text-sm font-semibold text-stone-50 transition-all duration-200 shadow-sm hover:bg-stone-800">
+                <span>Enter Kids' Corner</span>
               </a>
             </div>
           </div>
 
           <!-- Card 2: Mom & Home Space -->
-          <div id="gateway-card-mom-home" class="group relative flex flex-col justify-between rounded-3xl border border-stone-200/90 bg-white/95 p-7 watercolor-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-indigo-300/80">
+          <div id="gateway-card-mom-home" class="group relative flex flex-col justify-between rounded-3xl border border-stone-200/90 bg-white/95 p-6 sm:p-7 watercolor-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-indigo-300/80">
             <div class="pointer-events-none absolute -right-4 -top-4 h-28 w-28 rounded-full bg-indigo-200/30 blur-2xl opacity-60 transition-opacity duration-300 group-hover:opacity-100"></div>
             <div class="relative z-10">
-              <div class="mb-5">
-                <div class="inline-flex h-14 w-14 items-center justify-center rounded-2xl text-2xl shadow-sm ring-4 bg-indigo-100/80 text-indigo-900 ring-indigo-200/70 transition-transform duration-300 group-hover:scale-105">
+              <div class="mb-4">
+                <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl text-xl shadow-sm ring-4 bg-indigo-100/80 text-indigo-900 ring-indigo-200/70">
                   <span class="select-none">🍵</span>
                 </div>
               </div>
-              <h2 id="gateway-title-mom-home" class="font-serif-title text-2xl font-semibold text-stone-900 tracking-tight mb-2.5">
+              <h2 class="font-serif-title text-2xl font-semibold text-stone-900 tracking-tight mb-2">
                 Mom & Home Space
               </h2>
-              <p id="gateway-desc-mom-home" class="text-stone-600 text-sm leading-relaxed font-normal mb-6">
-                Mindful daily sheets, family planners, recipe collections, and intentional templates designed just for you.
+              <p class="text-stone-600 text-xs sm:text-sm leading-relaxed font-normal mb-5">
+                Thoughtful templates, family rhythms, and quiet spaces designed to support you.
               </p>
+
+              <!-- Sub-links / Contents List -->
+              <ul class="space-y-2.5 border-t border-stone-100 pt-4 mb-6 text-sm text-stone-700">
+                <li>
+                  <a href="#" class="group/link flex items-center justify-between hover:text-indigo-700 transition-colors">
+                    <span class="font-medium">Family Planners & Schedules</span>
+                    <span class="text-xs text-stone-400 group-hover/link:translate-x-0.5 transition-transform">→</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="group/link flex items-center justify-between hover:text-indigo-700 transition-colors">
+                    <span class="font-medium">Recipe Collections & Meal Prep</span>
+                    <span class="text-xs text-stone-400 group-hover/link:translate-x-0.5 transition-transform">→</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="group/link flex items-center justify-between hover:text-indigo-700 transition-colors">
+                    <span class="font-medium">Mindful Mom & Self-Care</span>
+                    <span class="text-xs text-stone-400 group-hover/link:translate-x-0.5 transition-transform">→</span>
+                  </a>
+                </li>
+              </ul>
             </div>
             <div class="relative z-10 pt-2">
-              <a href="https://spelling-and-writing-practice-worksheet.pages.dev/" target="_blank" rel="noopener noreferrer" id="gateway-btn-mom-home" class="flex w-full items-center justify-center rounded-2xl bg-stone-900 px-5 py-3.5 text-sm font-semibold text-stone-50 transition-all duration-200 shadow-sm hover:bg-stone-800">
-                <span>Explore Mom & Home →</span>
+              <a href="https://spelling-and-writing-practice-worksheet.pages.dev/" target="_blank" rel="noopener noreferrer" class="flex w-full items-center justify-center rounded-2xl bg-stone-900 px-4 py-3 text-xs sm:text-sm font-semibold text-stone-50 transition-all duration-200 shadow-sm hover:bg-stone-800">
+                <span>Enter Mom & Home</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3: The Wintosy Blog -->
+          <div id="gateway-card-blog" class="group relative flex flex-col justify-between rounded-3xl border border-stone-200/90 bg-white/95 p-6 sm:p-7 watercolor-card transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-amber-300/80">
+            <div class="pointer-events-none absolute -right-4 -top-4 h-28 w-28 rounded-full bg-amber-200/30 blur-2xl opacity-60 transition-opacity duration-300 group-hover:opacity-100"></div>
+            <div class="relative z-10">
+              <div class="mb-4">
+                <div class="inline-flex h-12 w-12 items-center justify-center rounded-2xl text-xl shadow-sm ring-4 bg-amber-100/80 text-amber-900 ring-amber-200/70">
+                  <span class="select-none">📝</span>
+                </div>
+              </div>
+              <h2 class="font-serif-title text-2xl font-semibold text-stone-900 tracking-tight mb-2">
+                The Wintosy Blog
+              </h2>
+              <p class="text-stone-600 text-xs sm:text-sm leading-relaxed font-normal mb-5">
+                Reflections, updates, and behind-the-scenes notes on building a quiet digital corner.
+              </p>
+
+              <!-- Sub-links / Contents List -->
+              <ul class="space-y-2.5 border-t border-stone-100 pt-4 mb-6 text-sm text-stone-700">
+                <li>
+                  <a href="#" class="group/link flex items-center justify-between hover:text-amber-800 transition-colors">
+                    <span class="font-medium">Latest Notes & Essays</span>
+                    <span class="text-xs text-stone-400 group-hover/link:translate-x-0.5 transition-transform">→</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="group/link flex items-center justify-between hover:text-amber-800 transition-colors">
+                    <span class="font-medium">Behind the Scenes</span>
+                    <span class="text-xs text-stone-400 group-hover/link:translate-x-0.5 transition-transform">→</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="group/link flex items-center justify-between hover:text-amber-800 transition-colors">
+                    <span class="font-medium">Creative Process</span>
+                    <span class="text-xs text-stone-400 group-hover/link:translate-x-0.5 transition-transform">→</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="relative z-10 pt-2">
+              <a href="#" class="flex w-full items-center justify-center rounded-2xl bg-stone-900 px-4 py-3 text-xs sm:text-sm font-semibold text-stone-50 transition-all duration-200 shadow-sm hover:bg-stone-800">
+                <span>Read the Blog</span>
               </a>
             </div>
           </div>
@@ -163,7 +249,7 @@
     </main>
 
     <!-- 4. Clean Footer -->
-    <footer id="main-header" class="mt-16 sm:mt-24 border-t border-stone-200/80 bg-[#FAF7F2]/80 py-10 px-4 sm:px-6 relative z-10">
+    <footer id="main-header" class="mt-12 sm:mt-16 border-t border-stone-200/80 bg-[#FAF7F2]/80 py-8 px-4 sm:px-6 relative z-10">
       <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 md:flex-row">
         <!-- Left Side: Title & Subtext -->
         <div class="text-center md:text-left">
@@ -180,7 +266,7 @@
         <!-- Right Side: PayPal Support & Contact Me -->
         <div class="flex flex-wrap items-center justify-center gap-3">
           <!-- PayPal Support Button -->
-          <a href="https://www.paypal.com/paypalme/wintosy" target="_blank" rel="noopener noreferrer" id="footer-paypal-btn" class="group inline-flex items-center gap-2 rounded-xl border border-stone-200 bg-white/90 px-4 py-2.5 text-xs sm:text-sm font-medium text-stone-700 shadow-sm hover:border-amber-300 hover:bg-amber-50/60 hover:text-stone-900 transition-all duration-200">
+          <a href="#" target="_blank" rel="noopener noreferrer" id="footer-paypal-btn" class="group inline-flex items-center gap-2 rounded-xl border border-stone-200 bg-white/90 px-4 py-2.5 text-xs sm:text-sm font-medium text-stone-700 shadow-sm hover:border-amber-300 hover:bg-amber-50/60 hover:text-stone-900 transition-all duration-200">
             <svg class="h-4 w-4 text-rose-500 fill-rose-500/20 transition-transform group-hover:scale-110" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
             </svg>
@@ -188,7 +274,7 @@
           </a>
           
           <!-- Contact Me Button -->
-          <a href="mailto:Wintosyway@gmail.com" id="footer-contact-btn" class="inline-flex items-center gap-2 rounded-xl border border-indigo-200 bg-indigo-50/80 px-4 py-2.5 text-xs sm:text-sm font-medium text-indigo-950 shadow-sm hover:bg-indigo-100 hover:border-indigo-300 transition-all duration-200">
+          <a href="#" id="footer-contact-btn" class="inline-flex items-center gap-2 rounded-xl border border-indigo-200 bg-indigo-50/80 px-4 py-2.5 text-xs sm:text-sm font-medium text-indigo-950 shadow-sm hover:bg-indigo-100 hover:border-indigo-300 transition-all duration-200">
             <svg class="h-4 w-4 text-indigo-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="25">
               <rect width="20" height="16" x="2" y="4" rx="2"/>
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
