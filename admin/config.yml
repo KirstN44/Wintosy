@@ -4,7 +4,8 @@ backend:
   branch: main
   auth_type: implicit
   app_id: Ov23liDcXFDm0rRHDQcN
-
+  site_url: https://wintosy.pages.dev
+  
 # Where your published blog markdown files will be saved in your repo
 media_folder: "assets/images"
 public_folder: "/assets/images"
