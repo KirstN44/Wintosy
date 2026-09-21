@@ -5,209 +5,255 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wintosy — A quiet corner for real life</title>
     <style>
-        /* Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #faf8f5;
+            background-color: #f7f5f0;
+            /* Whimsical watercolor-inspired soft background texture tone */
+            background-image: radial-gradient(circle at 10% 20%, rgba(245, 235, 224, 0.6) 0%, transparent 40%),
+                              radial-gradient(circle at 90% 80%, rgba(230, 238, 235, 0.5) 0%, transparent 40%);
             color: #2c2c2c;
-            margin: 0;
-            padding: 40px 20px;
+            line-height: 1.6;
+            padding: 50px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 100vh;
         }
 
         .container {
             max-width: 1100px;
             width: 100%;
+            margin: 0 auto;
+        }
+
+        header {
             text-align: center;
+            margin-bottom: 50px;
         }
 
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            font-size: 3rem;
             font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #2b2b2b;
+            margin-bottom: 12px;
+            font-family: serif;
         }
 
         p.subtitle {
-            color: #666;
-            font-size: 1.1rem;
-            margin-bottom: 40px;
+            color: #6b655f;
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        /* Cards Layout */
+        /* Cards Grid */
         .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            text-align: left;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
             margin-bottom: 60px;
         }
 
         .card {
-            background: #ffffff;
-            border-radius: 16px;
-            padding: 32px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            border-radius: 20px;
+            padding: 36px 32px;
+            box-shadow: 0 10px 30px rgba(120, 110, 100, 0.05);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            border: 1px solid #eae5de;
+            border: 1px solid #e8e2d8;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .card h2 {
-            font-size: 1.5rem;
-            margin-top: 0;
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(120, 110, 100, 0.08);
+        }
+
+        .card-content h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #2c2c2c;
             margin-bottom: 12px;
         }
 
-        .card p {
-            color: #555;
+        .card-content p {
+            color: #615a53;
             font-size: 0.95rem;
-            line-height: 1.5;
+            line-height: 1.6;
             margin-bottom: 24px;
         }
 
+        /* Card Link Lists */
         .card-links {
             list-style: none;
-            padding: 0;
-            margin: 0 0 24px 0;
-            border-top: 1px solid #f0eae1;
+            margin-bottom: 30px;
+            border-top: 1px dashed #dcd5c9;
             padding-top: 16px;
         }
 
         .card-links li {
-            padding: 6px 0;
+            padding: 8px 0;
             font-size: 0.9rem;
         }
 
         .card-links .section-label {
-            color: #999;
+            color: #8c8275;
             font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             margin-top: 10px;
             display: block;
+            font-weight: 600;
         }
 
         .card-links a {
-            color: #1a1a1a;
+            color: #3a3530;
             text-decoration: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            font-weight: 500;
+            transition: color 0.15s;
         }
 
         .card-links a:hover {
-            color: #d97706;
-            text-decoration: underline;
+            color: #a66a35;
         }
 
-        /* Buttons & Disabled Styling */
+        .card-links a span {
+            color: #b5aba0;
+            font-weight: 300;
+        }
+
+        /* Buttons & Disabled States */
         .btn {
             display: block;
             width: 100%;
             padding: 14px 0;
             text-align: center;
-            border-radius: 8px;
+            border-radius: 12px;
             font-weight: 600;
+            font-size: 0.95rem;
             text-decoration: none;
             box-sizing: border-box;
-            transition: background 0.2s;
+            transition: all 0.2s ease;
         }
 
         .btn-dark {
-            background-color: #1a1a1a;
+            background-color: #36332f;
             color: #ffffff;
+            box-shadow: 0 4px 12px rgba(54, 51, 47, 0.15);
         }
 
         .btn-dark:hover {
-            background-color: #333333;
+            background-color: #48443f;
         }
 
-        /* Non-clickable disabled state */
+        /* Disabled Button Style */
         .disabled-btn {
             pointer-events: none;
             cursor: default;
-            opacity: 0.5;
-            background-color: #cccccc;
-            color: #666666;
+            background-color: #e6e2db;
+            color: #9e968c;
+            box-shadow: none;
         }
 
         /* Footer */
         footer {
-            border-top: 1px solid #eae5de;
+            border-top: 1px solid #e8e2d8;
             width: 100%;
             padding-top: 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-size: 0.9rem;
-            color: #666;
+            color: #7a7267;
         }
 
         .footer-links a {
-            color: #444;
+            color: #5c5449;
             text-decoration: none;
             margin-left: 20px;
+            transition: color 0.15s;
         }
 
         .footer-links a:hover {
+            color: #a66a35;
             text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            footer {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            .footer-links a {
+                margin: 0 10px;
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Wintosy</h1>
-        <p class="subtitle">Select a section below to explore interactive learning apps, intentional family printables, and personal reflections.</p>
+        <header>
+            <h1>Wintosy</h1>
+            <p class="subtitle">Select a section below to explore interactive learning apps, intentional family printables, and personal reflections.</p>
+        </header>
 
         <div class="cards-grid">
             <!-- Kids' Corner Card -->
             <div class="card">
-                <div>
+                <div class="card-content">
                     <h2>Kids' Corner</h2>
                     <p>Playful learning spaces designed for early growth, structured writing, and joyful discovery.</p>
                     <ul class="card-links">
                         <li><span class="section-label">Interactive Educational App</span></li>
-                        <li><a href="/kids/sprout-lab">Sprout Lab <span>—</span></a></li>
+                        <li><a href="https://sprout-lab.pages.dev/" target="_blank" rel="noopener noreferrer">Sprout Lab <span>—</span></a></li>
                         <li><span class="section-label">Educational Printables</span></li>
-                        <li><a href="/kids/spelling-phonics">Spelling and Phonics Worksheet <span>—</span></a></li>
+                        <li><a href="https://spelling-and-writing-practice-worksheet.pages.dev/" target="_blank" rel="noopener noreferrer">Spelling and Phonics Worksheet <span>—</span></a></li>
                     </ul>
                 </div>
-                <!-- Non-clickable state -->
-                <span class="btn btn-dark disabled-btn">Enter Kids' Corner</span>
+                <span class="btn disabled-btn">Enter Kids' Corner</span>
             </div>
 
             <!-- Mom & Home Space Card -->
             <div class="card">
-                <div>
+                <div class="card-content">
                     <h2>Mom & Home Space</h2>
                     <p>Thoughtful templates, family rhythms, and quiet spaces designed to support you.</p>
                     <ul class="card-links">
-                        <li><a href="/mom/planners">Family Planners & Schedules <span>—</span></a></li>
-                        <li><a href="/mom/recipes">Recipe Collections & Meal Prep <span>—</span></a></li>
-                        <li><a href="/mom/self-care">Mindful Mom & Self-Care <span>—</span></a></li>
+                        <li><a href="/mom/planners.html">Family Planners & Schedules <span>—</span></a></li>
+                        <li><a href="/mom/recipes.html">Recipe Collections & Meal Prep <span>—</span></a></li>
+                        <li><a href="/mom/self-care.html">Mindful Mom & Self-Care <span>—</span></a></li>
                     </ul>
                 </div>
-                <!-- Non-clickable state -->
-                <span class="btn btn-dark disabled-btn">Enter Mom & Home</span>
+                <span class="btn disabled-btn">Enter Mom & Home</span>
             </div>
 
             <!-- The Wintosy Blog Card -->
             <div class="card">
-                <div>
+                <div class="card-content">
                     <h2>The Wintosy Blog</h2>
                     <p>Reflections, updates, and behind-the-scenes notes on building a quiet digital corner.</p>
                     <ul class="card-links">
-                        <li><a href="/blog/notes">Latest Notes & Essays <span>—</span></a></li>
-                        <li><a href="/blog/behind-the-scenes">Behind the Scenes <span>—</span></a></li>
-                        <li><a href="/blog/creative-process">Creative Process <span>—</span></a></li>
+                        <li><a href="/blog/notes.html">Latest Notes & Essays <span>—</span></a></li>
+                        <li><a href="/blog/behind-the-scenes.html">Behind the Scenes <span>—</span></a></li>
+                        <li><a href="/blog/creative-process.html">Creative Process <span>—</span></a></li>
                     </ul>
                 </div>
-                <!-- Remains an active link -->
-                <a href="/blog" class="btn btn-dark">Read the Blog</a>
+                <a href="/blog.html" class="btn btn-dark">Read the Blog</a>
             </div>
         </div>
 
