@@ -2,6 +2,7 @@ backend:
   name: github
   repo: KirstN44/Wintosy
   branch: main
+  base_url: https://api.netlify.com
 
 # Where your published blog markdown files will be saved in your repo
 media_folder: "assets/images"
