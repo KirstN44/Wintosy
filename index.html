@@ -77,16 +77,30 @@
         }
 
         .card-links li {
+            padding: 6px 0;
+            font-size: 0.9rem;
+        }
+
+        .card-links .section-label {
+            color: #999;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 10px;
+            display: block;
+        }
+
+        .card-links a {
+            color: #1a1a1a;
+            text-decoration: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 6px 0;
-            font-size: 0.9rem;
-            color: #444;
         }
 
-        .card-links li span {
-            color: #bbb;
+        .card-links a:hover {
+            color: #d97706;
+            text-decoration: underline;
         }
 
         /* Buttons & Disabled Styling */
@@ -156,10 +170,10 @@
                     <h2>Kids' Corner</h2>
                     <p>Playful learning spaces designed for early growth, structured writing, and joyful discovery.</p>
                     <ul class="card-links">
-                        <li><span>INTERACTIVE EDUCATIONAL APP</span></li>
-                        <li>Sprout Lab <span>—</span></li>
-                        <li><span>EDUCATIONAL PRINTABLES</span></li>
-                        <li>Spelling and Phonics Worksheet <span>—</span></li>
+                        <li><span class="section-label">Interactive Educational App</span></li>
+                        <li><a href="/kids/sprout-lab">Sprout Lab <span>—</span></a></li>
+                        <li><span class="section-label">Educational Printables</span></li>
+                        <li><a href="/kids/spelling-phonics">Spelling and Phonics Worksheet <span>—</span></a></li>
                     </ul>
                 </div>
                 <!-- Non-clickable state -->
@@ -172,9 +186,9 @@
                     <h2>Mom & Home Space</h2>
                     <p>Thoughtful templates, family rhythms, and quiet spaces designed to support you.</p>
                     <ul class="card-links">
-                        <li>Family Planners & Schedules <span>—</span></li>
-                        <li>Recipe Collections & Meal Prep <span>—</span></li>
-                        <li>Mindful Mom & Self-Care <span>—</span></li>
+                        <li><a href="/mom/planners">Family Planners & Schedules <span>—</span></a></li>
+                        <li><a href="/mom/recipes">Recipe Collections & Meal Prep <span>—</span></a></li>
+                        <li><a href="/mom/self-care">Mindful Mom & Self-Care <span>—</span></a></li>
                     </ul>
                 </div>
                 <!-- Non-clickable state -->
@@ -187,9 +201,9 @@
                     <h2>The Wintosy Blog</h2>
                     <p>Reflections, updates, and behind-the-scenes notes on building a quiet digital corner.</p>
                     <ul class="card-links">
-                        <li>Latest Notes & Essays <span>—</span></li>
-                        <li>Behind the Scenes <span>—</span></li>
-                        <li>Creative Process <span>—</span></li>
+                        <li><a href="/blog/notes">Latest Notes & Essays <span>—</span></a></li>
+                        <li><a href="/blog/behind-the-scenes">Behind the Scenes <span>—</span></a></li>
+                        <li><a href="/blog/creative-process">Creative Process <span>—</span></a></li>
                     </ul>
                 </div>
                 <!-- Remains an active link -->
