@@ -2,7 +2,7 @@ backend:
   name: github
   repo: KirstN44/Wintosy
   branch: main
-  auth_type: implicit
+  base_url: https://api.decapcms.org
   app_id: Ov23liDcXFDm0rRHDQcN
 
 media_folder: "assets/images"
