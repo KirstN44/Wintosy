@@ -35,14 +35,15 @@
         }
 
         /* Watercolor background scoped strictly to the header area */
-        header {
+       header {
             text-align: center;
             margin-bottom: 50px;
-            padding: 50px 20px;
+            padding: 60px 20px;
             background-image: url('watercolourbg.png');
             background-position: center;
             background-repeat: no-repeat;
-            background-size: cover;
+            /* Sets a fixed display width for the artwork so it shows up at a clear, visible size */
+            background-size: 450px auto; 
             border-radius: 28px;
             border: 2px solid #eadfd3;
             box-shadow: 0 12px 35px rgba(90, 75, 60, 0.05);
