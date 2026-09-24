@@ -332,6 +332,47 @@
             </div>
         </footer>
     </div>
+<script>
+  async function loadWintosyBlog() {
+    const container = document.getElementById('blog-posts-container');
+    
+    try {
+      // Fetch the contents of your blog content folder from your GitHub repository
+      const response = await fetch('https://api.github.com/repos/KirstN44/Wintosy/contents/content/blog');
+      if (!response.ok) throw new Error('Could not fetch posts');
+      
+      const files = await response.json();
+      
+      if (files.length === 0) return;
 
+      container.innerHTML = ''; // Clear "We working on it"
+
+      // Loop through each markdown file found in the folder
+      for (const file of files) {
+        if (file.name.endsWith('.md') || file.name.endsWith('.json')) {
+          const fileResponse = await fetch(file.download_url);
+          const markdownText = await fileResponse.text();
+          
+          // Simple frontmatter parser to grab title and date
+          const titleMatch = markdownText.match(/title:\s*["']?([^"'\n]+)["']?/);
+          const title = titleMatch ? titleMatch : file.name.replace('.md', '');
+          
+          // Create a nice card for each post
+          const postCard = document.createElement('article');
+          postCard.className = 'blog-card';
+          postCard.innerHTML = `
+            <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">${title}</h3>
+            <p style="color: #666; font-size: 0.9rem;">Published via Wintosy CMS</p>
+          `;
+          container.appendChild(postCard);
+        }
+      }
+    } catch (error) {
+      console.log('Blog loading fallback active:', error);
+    }
+  }
+
+  loadWintosyBlog();
+</script>
 </body>
 </html>
