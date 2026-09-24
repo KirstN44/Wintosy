@@ -352,23 +352,50 @@
           const fileResponse = await fetch(file.download_url);
           const markdownText = await fileResponse.text();
           
+          // Extract title
           const titleMatch = markdownText.match(/title:\s*["']?([^"'\n]+)["']?/);
           const title = titleMatch ? titleMatch[1] : file.name.replace('.md', '');
           
-          // Create a clickable card link pointing to the markdown file (or a reader view)
-          const postLink = document.createElement('a');
-          postLink.href = file.download_url; // Opens the raw markdown/post file directly
-          postLink.target = "_blank";
-          postLink.style.textDecoration = 'none';
-          postLink.style.display = 'block';
+          // Extract body content (stripping out frontmatter)
+          const parts = markdownText.split('---');
+          let body = parts.length >= 3 ? parts.slice(2).join('---').trim() : markdownText;
 
-          postLink.innerHTML = `
-            <div class="blog-item" style="transition: transform 0.2s ease; cursor: pointer;">
-              <h3>${title} &rarr;</h3>
-              <p style="margin-top: 4px; font-size: 0.85rem; color: #8c7966;">Click to read post</p>
+          // Create a polished interactive card item
+          const postWrapper = document.createElement('div');
+          postWrapper.className = 'blog-item';
+          postWrapper.style.cursor = 'pointer';
+          postWrapper.style.marginBottom = '12px';
+          postWrapper.style.padding = '14px';
+          postWrapper.style.background = '#fff';
+          postWrapper.style.borderRadius = '12px';
+          postWrapper.style.border = '1px solid #eadfd3';
+
+          postWrapper.innerHTML = `
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; color: #231c17; margin: 0;">${title}</h3>
+              <span class="toggle-text" style="font-size: 0.82rem; color: #8c7966; font-weight: 500;">Read post &rarr;</span>
+            </div>
+            <div class="blog-body" style="display: none; margin-top: 14px; padding-top: 14px; border-top: 1.5px dashed #eadfd3; font-size: 0.95rem; color: #4a3d33; line-height: 1.7;">
+              <p>${body.replace(/\n/g, '<br>')}</p>
             </div>
           `;
-          container.appendChild(postLink);
+
+          // Toggle open/close nicely on click without leaving the page
+          postWrapper.addEventListener('click', () => {
+            const bodyDiv = postWrapper.querySelector('.blog-body');
+            const toggleText = postWrapper.querySelector('.toggle-text');
+            if (bodyDiv.style.display === 'none') {
+              bodyDiv.style.display = 'block';
+              toggleText.textContent = 'Close ▲';
+              postWrapper.style.borderColor = '#c4b4a2';
+            } else {
+              bodyDiv.style.display = 'none';
+              toggleText.textContent = 'Read post →';
+              postWrapper.style.borderColor = '#eadfd3';
+            }
+          });
+
+          container.appendChild(postWrapper);
         }
       }
     } catch (error) {
