@@ -333,8 +333,7 @@
             </div>
         </footer>
     </div>
-
-<script>
+   <script>
   async function loadWintosyBlog() {
     const container = document.getElementById('blog-posts-container');
     
@@ -356,13 +355,20 @@
           const titleMatch = markdownText.match(/title:\s*["']?([^"'\n]+)["']?/);
           const title = titleMatch ? titleMatch[1] : file.name.replace('.md', '');
           
-          const postCard = document.createElement('div');
-          postCard.className = 'blog-item';
-          postCard.innerHTML = `
-            <h3>${title}</h3>
-            <p>Published via Wintosy CMS</p>
+          // Create a clickable card link pointing to the markdown file (or a reader view)
+          const postLink = document.createElement('a');
+          postLink.href = file.download_url; // Opens the raw markdown/post file directly
+          postLink.target = "_blank";
+          postLink.style.textDecoration = 'none';
+          postLink.style.display = 'block';
+
+          postLink.innerHTML = `
+            <div class="blog-item" style="transition: transform 0.2s ease; cursor: pointer;">
+              <h3>${title} &rarr;</h3>
+              <p style="margin-top: 4px; font-size: 0.85rem; color: #8c7966;">Click to read post</p>
+            </div>
           `;
-          container.appendChild(postCard);
+          container.appendChild(postLink);
         }
       }
     } catch (error) {
@@ -372,5 +378,6 @@
 
   loadWintosyBlog();
 </script>
+
 </body>
 </html>
