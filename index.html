@@ -77,7 +77,39 @@
             font-weight: 400;
         }
 
-        /* Cards Grid */
+        /* Hero Full-Width Blog Card */
+        .hero-blog-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 28px;
+            padding: 44px 38px;
+            box-shadow: 0 16px 40px rgba(90, 75, 60, 0.07);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 2px solid #eadfd3;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 36px;
+        }
+
+        .hero-blog-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #457b9d, #1d3557, #a8dadc);
+        }
+
+        .hero-blog-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 22px 48px rgba(90, 75, 60, 0.12);
+        }
+
+        /* Cards Grid for Lower Section */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
@@ -118,10 +150,6 @@
             background: linear-gradient(90deg, #2a9d8f, #e76f51, #264653);
         }
 
-        .card.blog::before {
-            background: linear-gradient(90deg, #457b9d, #1d3557, #a8dadc);
-        }
-
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 22px 48px rgba(90, 75, 60, 0.12);
@@ -141,9 +169,8 @@
 
         .card.kids .card-icon { background-color: #fdf0ec; color: #e76f51; }
         .card.mom .card-icon { background-color: #eef6f4; color: #2a9d8f; }
-        .card.blog .card-icon { background-color: #f0f4f8; color: #457b9d; }
 
-        .card-content h2 {
+        .card-content h2, .hero-blog-card h2 {
             font-family: 'Playfair Display', Georgia, serif;
             font-size: 1.85rem;
             font-weight: 600;
@@ -151,7 +178,7 @@
             margin-bottom: 12px;
         }
 
-        .card-content p {
+        .card-content p, .hero-blog-card p {
             color: #615246;
             font-size: 0.98rem;
             line-height: 1.6;
@@ -201,42 +228,6 @@
             font-weight: 300;
         }
 
-        /* Status Notes */
-        .status-note {
-            display: block;
-            width: 100%;
-            padding: 14px 0;
-            text-align: center;
-            border-radius: 16px;
-            background-color: #f4efe9;
-            color: #8c7966;
-            font-size: 0.92rem;
-            font-style: italic;
-            border: 1px dashed #d5c3b0;
-        }
-
-        /* Blog post card styling */
-        .blog-item {
-            background: #fdfbf7;
-            border: 1px solid #eadfd3;
-            padding: 16px;
-            border-radius: 12px;
-            margin-top: 12px;
-        }
-
-        .blog-item h3 {
-            font-size: 1.1rem;
-            font-family: 'Playfair Display', Georgia, serif;
-            color: #231c17;
-            margin-bottom: 4px;
-        }
-
-        .blog-item p {
-            font-size: 0.85rem;
-            color: #7a6858;
-            margin: 0;
-        }
-
         /* Footer */
         footer {
             border-top: 1px solid #eadfd3;
@@ -283,6 +274,19 @@
             <p class="subtitle">Explore interactive learning spaces, intentional family notes, and gentle reflections.</p>
         </header>
 
+        <!-- Full-Width Featured Blog Card at the Top -->
+        <div class="hero-blog-card">
+            <div class="card-content">
+                <div class="card-icon" style="background-color: #f0f4f8; color: #457b9d;">☕</div>
+                <h2>The Wintosy Blog</h2>
+                <p>Read our latest entries, reflections, and updates from the workshop and home.</p>
+                <ul class="card-links">
+                    <li><a href="blog.html">Browse all posts <span>&rarr;</span></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Two-Column Grid for Kids and Home -->
         <div class="cards-grid">
             <!-- Kids' Corner Card -->
             <div class="card kids">
@@ -299,7 +303,7 @@
                 </div>
             </div>
 
-        <!-- Mom & Home Space Card -->
+            <!-- Mom & Home Space Card -->
             <div class="card mom">
                 <div class="card-content">
                     <div class="card-icon">🌿</div>
@@ -311,18 +315,18 @@
                     </ul>
                 </div>
             </div>
+        </div>
 
-            <!-- The Wintosy Blog Card -->
-            <div class="card blog">
-                <div class="card-content">
-                    <div class="card-icon">☕</div>
-                    <h2>The Wintosy Blog</h2>
-                    <p>Read our latest entries, reflections, and updates from the workshop and home.</p>
-                    <ul class="card-links">
-                        <li><a href="blog.html">Browse all posts <span>&rarr;</span></a></li>
-                    </ul>
-                </div>
+        <footer>
+            <div>
+                <strong>Wintosy</strong><br>
+                <span>Built with care for parents, kids, and homes.</span>
             </div>
+            <div class="footer-links">
+                <a href="#contact">Contact Me</a>
+            </div>
+        </footer>
+    </div>
 
 </body>
 </html>
