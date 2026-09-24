@@ -16,18 +16,14 @@
             padding: 0;
         }
 
-        body {
+       body {
             font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-            /* Watercolor background blended with your floral graphic */
             background-color: #f7f2eb;
-            background-image: 
-                url('watercolourbg.png'),
-                radial-gradient(circle at 10% 20%, rgba(246, 221, 204, 0.7) 0%, transparent 45%),
-                radial-gradient(circle at 90% 80%, rgba(214, 227, 219, 0.7) 0%, transparent 45%),
-                radial-gradient(circle at 50% 50%, rgba(253, 250, 246, 1) 100%, transparent 100%);
+            /* Explicitly set image sizing and repeat so it fills the screen properly */
+            background-image: url('watercolourbg.png');
             background-position: center top;
             background-repeat: no-repeat;
-            background-size: 100% auto;
+            background-size: cover;
             color: #2e2621;
             line-height: 1.6;
             padding: 70px 20px;
