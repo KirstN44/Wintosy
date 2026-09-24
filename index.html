@@ -35,12 +35,20 @@
         }
 
         /* Watercolor background scoped strictly to the header area */
-    <header style="position: relative; text-align: center; margin: 0 auto 50px auto; max-width: 600px; padding: 80px 40px; background-image: url('watercolourbg.png'); background-position: center; background-repeat: no-repeat; background-size: 100% 100%; border-radius: 20px;">
-            <span class="top-tag">A Quiet Corner for Real Life</span>
-            <h1 style="margin-top: 10px;">Wintosy</h1>
-            <p class="subtitle">Explore interactive learning spaces, intentional family notes, and gentle reflections.</p>
-        </header>
-
+   header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 70px 30px;
+            /* Layer 1: Solid background color to fill the center gap, Layer 2: Your existing PNG frame */
+            background-color: #fff9f4;
+            background-image: url('watercolourbg.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%; /* Stretches the frame to match the box dimensions */
+            border-radius: 28px;
+            border: 2px solid #eadfd3;
+            box-shadow: 0 12px 35px rgba(90, 75, 60, 0.05);
+        }
         /* Tiny boutique label */
         .top-tag {
             display: inline-block;
