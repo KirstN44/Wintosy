@@ -201,31 +201,7 @@
             font-weight: 300;
         }
 
-        /* Buttons and Status Notes */
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 15px 0;
-            text-align: center;
-            border-radius: 16px;
-            font-weight: 600;
-            font-size: 0.98rem;
-            text-decoration: none;
-            box-sizing: border-box;
-            transition: all 0.25s ease;
-        }
-
-        .btn-dark {
-            background-color: #2e2621;
-            color: #fdfbf7;
-            box-shadow: 0 6px 18px rgba(46, 38, 33, 0.18);
-        }
-
-        .btn-dark:hover {
-            background-color: #443932;
-            transform: translateY(-1px);
-        }
-
+        /* Status Notes */
         .status-note {
             display: block;
             width: 100%;
@@ -237,6 +213,28 @@
             font-size: 0.92rem;
             font-style: italic;
             border: 1px dashed #d5c3b0;
+        }
+
+        /* Blog post card styling */
+        .blog-item {
+            background: #fdfbf7;
+            border: 1px solid #eadfd3;
+            padding: 16px;
+            border-radius: 12px;
+            margin-top: 12px;
+        }
+
+        .blog-item h3 {
+            font-size: 1.1rem;
+            font-family: 'Playfair Display', Georgia, serif;
+            color: #231c17;
+            margin-bottom: 4px;
+        }
+
+        .blog-item p {
+            font-size: 0.85rem;
+            color: #7a6858;
+            margin: 0;
         }
 
         /* Footer */
@@ -299,7 +297,6 @@
                         <li><a href="https://spelling-and-writing-practice-worksheet.pages.dev/" target="_blank" rel="noopener noreferrer">Spelling and Phonics Worksheet <span>—</span></a></li>
                     </ul>
                 </div>
-                <!-- Kids' corner coming soon message removed -->
             </div>
 
             <!-- Mom & Home Space Card -->
@@ -317,8 +314,12 @@
                 <div class="card-content">
                     <div class="card-icon">☕</div>
                     <h2>The Wintosy Blog</h2>
+                    
+                    <!-- Dynamic container linked to JavaScript -->
+                    <div id="blog-posts-container" style="margin-top: 15px;">
+                        <span class="status-note">We working on it</span>
+                    </div>
                 </div>
-                <span class="status-note">We working on it</span>
             </div>
         </div>
 
@@ -332,37 +333,34 @@
             </div>
         </footer>
     </div>
+
 <script>
   async function loadWintosyBlog() {
     const container = document.getElementById('blog-posts-container');
     
     try {
-      // Fetch the contents of your blog content folder from your GitHub repository
       const response = await fetch('https://api.github.com/repos/KirstN44/Wintosy/contents/content/blog');
       if (!response.ok) throw new Error('Could not fetch posts');
       
       const files = await response.json();
       
-      if (files.length === 0) return;
+      if (!files || files.length === 0) return;
 
-      container.innerHTML = ''; // Clear "We working on it"
+      container.innerHTML = ''; // Clear placeholder
 
-      // Loop through each markdown file found in the folder
       for (const file of files) {
         if (file.name.endsWith('.md') || file.name.endsWith('.json')) {
           const fileResponse = await fetch(file.download_url);
           const markdownText = await fileResponse.text();
           
-          // Simple frontmatter parser to grab title and date
           const titleMatch = markdownText.match(/title:\s*["']?([^"'\n]+)["']?/);
-          const title = titleMatch ? titleMatch : file.name.replace('.md', '');
+          const title = titleMatch ? titleMatch[1] : file.name.replace('.md', '');
           
-          // Create a nice card for each post
-          const postCard = document.createElement('article');
-          postCard.className = 'blog-card';
+          const postCard = document.createElement('div');
+          postCard.className = 'blog-item';
           postCard.innerHTML = `
-            <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">${title}</h3>
-            <p style="color: #666; font-size: 0.9rem;">Published via Wintosy CMS</p>
+            <h3>${title}</h3>
+            <p>Published via Wintosy CMS</p>
           `;
           container.appendChild(postCard);
         }
