@@ -3,7 +3,7 @@ title: 'Meet the Universal Beanie Calculator: Your New Go-To Hat Companion'
 date: 2026-09-25T06:42:00
 ---
 
-Whether you prefer working top-down or bottom-up, this interactive tool adapts to your project. Simply select your measurement units, choose your target head circumference (from micro-preemie sizes to generous adult fits), pick your preferred ribbing style, and input your swatch gauge.
+[Whether you prefer working top-down or bottom-up, this interactive tool adapts to your project. Simply select your measurement units, choose your target head circumference (from micro-preemie sizes to generous adult fits), pick your preferred ribbing style, and input your swatch gauge.](https://stitch-minded.pages.dev/beanie-calculator)
 
 The calculator instantly generates a custom recipe complete with:
 
