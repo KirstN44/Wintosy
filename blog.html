@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     
+    <!-- Lightweight Markdown Parser Script -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -71,6 +74,17 @@
             color: #4a3d33;
             line-height: 1.8;
         }
+        .post-content p {
+            margin-bottom: 14px;
+        }
+        .post-content a {
+            color: #c85a32;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+        .post-content a:hover {
+            color: #231c17;
+        }
         footer {
             border-top: 1px solid #eadfd3;
             width: 100%;
@@ -128,9 +142,10 @@
 
           const article = document.createElement('article');
           article.className = 'post-card';
+          // Using marked.parse(body) instead of plain text string replacement so markdown links render as clickable anchors
           article.innerHTML = `
             <h2>${title}</h2>
-            <div class="post-content"><p>${body.replace(/\n/g, '<br>')}</p></div>
+            <div class="post-content">${marked.parse(body)}</div>
           `;
           container.appendChild(article);
         }
