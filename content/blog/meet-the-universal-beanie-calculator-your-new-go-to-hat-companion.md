@@ -13,4 +13,4 @@ The calculator instantly generates a custom recipe complete with:
 
 Crafting should feel like a sanctuary, a peaceful space to create something beautiful with your own hands. I hope this tool takes the stress out of the numbers so you can focus entirely on the joy of making.
 
-Head over to the [Universal Beanie Calculator](https://stitch-minded.pages.dev/beanie-calculator?utm_source=gemini) to try it out on your next project, and let me know how your stitches are flowing! ☕🌿
+Head over to the [Universal Beanie Calculator](https://stitch-minded.pages.dev/beanie-calculator) to try it out on your next project, and let me know how your stitches are flowing! ☕🌿
