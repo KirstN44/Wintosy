@@ -1,14 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wintosy — A quiet corner for real life</title>
-    <!-- Importing a boutique serif font -->
+
+    <title>Digital Wintosy — Creative Projects, Digital Tools & Useful Resources</title>
+    <meta name="description" content="Explore Digital Wintosy, a welcoming home for creative projects, digital tools, learning resources, and practical everyday solutions.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    
+
     <style>
         * {
             box-sizing: border-box;
@@ -60,7 +63,7 @@
 
         h1 {
             font-family: 'Playfair Display', Georgia, serif;
-            font-size: 4rem;
+            font-size: clamp(2.5rem, 7vw, 4rem);
             font-weight: 600;
             letter-spacing: -0.01em;
             color: #231c17;
@@ -72,44 +75,12 @@
             font-style: italic;
             color: #6e5c4f;
             font-size: 1.25rem;
-            max-width: 580px;
+            max-width: 620px;
             margin: 0 auto;
             font-weight: 400;
         }
 
-        .hero-blog-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border-radius: 28px;
-            padding: 44px 38px;
-            box-shadow: 0 16px 40px rgba(90, 75, 60, 0.07);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            border: 2px solid #eadfd3;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-bottom: 36px;
-        }
-
-        .hero-blog-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: linear-gradient(90deg, #457b9d, #1d3557, #a8dadc);
-        }
-
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-            gap: 36px;
-            margin-bottom: 70px;
-        }
-
+        .hero-blog-card,
         .card {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
@@ -124,6 +95,12 @@
             overflow: hidden;
         }
 
+        .hero-blog-card {
+            margin-bottom: 36px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hero-blog-card::before,
         .card::before {
             content: '';
             position: absolute;
@@ -133,9 +110,32 @@
             height: 6px;
         }
 
-        .card.kids::before { background: linear-gradient(90deg, #e76f51, #f4a261, #e9c46a); }
-        .card.mom::before { background: linear-gradient(90deg, #2a9d8f, #e76f51, #264653); }
-        .card.ai::before { background: linear-gradient(90deg, #6a0dad, #9b59b6, #3498db); }
+        .hero-blog-card::before {
+            background: linear-gradient(90deg, #b69a7a, #e8dcc4, #a58b72);
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
+            gap: 30px;
+            margin-bottom: 70px;
+        }
+
+        .card.kids::before {
+            background: linear-gradient(90deg, #e76f51, #f4a261, #e9c46a);
+        }
+
+        .card.home::before {
+            background: linear-gradient(90deg, #2a9d8f, #e76f51, #264653);
+        }
+
+        .card.ai::before {
+            background: linear-gradient(90deg, #6a0dad, #9b59b6, #3498db);
+        }
+
+        .card.nook::before {
+            background: linear-gradient(90deg, #c49a9c, #e8d7d0, #a58b72);
+        }
 
         .card-icon {
             width: 44px;
@@ -148,11 +148,33 @@
             margin-bottom: 20px;
         }
 
-        .card.kids .card-icon { background-color: #fdf0ec; color: #e76f51; }
-        .card.mom .card-icon { background-color: #eef6f4; color: #2a9d8f; }
-        .card.ai .card-icon { background-color: #f4ecf7; color: #8e44ad; }
+        .hero-blog-card .card-icon {
+            background-color: #f0f4f8;
+            color: #6e5c4f;
+        }
 
-        .card-content h2, .hero-blog-card h2 {
+        .card.kids .card-icon {
+            background-color: #fdf0ec;
+            color: #e76f51;
+        }
+
+        .card.home .card-icon {
+            background-color: #eef6f4;
+            color: #2a9d8f;
+        }
+
+        .card.ai .card-icon {
+            background-color: #f4ecf7;
+            color: #8e44ad;
+        }
+
+        .card.nook .card-icon {
+            background-color: #f6eeee;
+            color: #9b7477;
+        }
+
+        .card-content h2,
+        .hero-blog-card h2 {
             font-family: 'Playfair Display', Georgia, serif;
             font-size: 1.85rem;
             font-weight: 600;
@@ -160,16 +182,17 @@
             margin-bottom: 12px;
         }
 
-        .card-content p, .hero-blog-card p {
+        .card-content p,
+        .hero-blog-card p {
             color: #615246;
             font-size: 0.98rem;
-            line-height: 1.6;
+            line-height: 1.7;
             margin-bottom: 24px;
         }
 
         .card-links {
             list-style: none;
-            margin-bottom: 32px;
+            margin-bottom: 12px;
             border-top: 1px dashed #e1d3c2;
             padding-top: 18px;
         }
@@ -195,11 +218,23 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 12px;
             font-weight: 500;
         }
 
         .card-links a:hover {
-            color: #e76f51;
+            color: #a16f73;
+        }
+
+        .status-note {
+            display: inline-block;
+            color: #8c6d70;
+            background: #f7eeee;
+            border-radius: 20px;
+            padding: 5px 12px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            margin-bottom: 16px;
         }
 
         footer {
@@ -209,12 +244,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 20px;
             font-size: 0.92rem;
             color: #7a6858;
         }
 
         .footer-links {
             display: flex;
+            flex-wrap: wrap;
             gap: 20px;
         }
 
@@ -225,96 +262,196 @@
         }
 
         .footer-links a:hover {
-            color: #e76f51;
+            color: #a16f73;
             text-decoration: underline;
         }
 
         @media (max-width: 768px) {
+            body {
+                padding: 30px 15px;
+            }
+
+            header {
+                padding: 45px 20px;
+                margin-bottom: 30px;
+            }
+
+            .hero-blog-card,
+            .card {
+                padding: 35px 25px;
+                border-radius: 22px;
+            }
+
+            .cards-grid {
+                gap: 22px;
+                margin-bottom: 45px;
+            }
+
             footer {
                 flex-direction: column;
-                gap: 15px;
                 text-align: center;
+                gap: 18px;
             }
+
             .footer-links {
                 justify-content: center;
             }
         }
     </style>
 </head>
-<body>
 
+<body>
     <div class="container">
+
         <header>
-            <span class="top-tag">A Quiet Corner for Real Life</span>
-            <h1>Wintosy</h1>
-            <p class="subtitle">Explore interactive learning spaces, intentional family notes, and gentle reflections.</p>
+            <span class="top-tag">Creative Projects · Digital Tools · Useful Resources</span>
+            <h1>Digital Wintosy</h1>
+            <p class="subtitle">
+                A welcoming digital home for creative ideas, practical tools,
+                and useful things for everyday life.
+            </p>
         </header>
 
-        <div class="hero-blog-card">
+        <section class="hero-blog-card">
             <div class="card-content">
-                <div class="card-icon" style="background-color: #f0f4f8; color: #457b9d;">☕</div>
-                <h2>The Wintosy Blog</h2>
-                <p>Read our latest entries, reflections, and updates from the workshop and home.</p>
+                <div class="card-icon">☕</div>
+                <h2>The Digital Wintosy Blog</h2>
+                <p>
+                    Notes, ideas, experiments, and updates from the world of
+                    Digital Wintosy.
+                </p>
                 <ul class="card-links">
-                    <li><a href="blog.html">Browse all posts <span>&rarr;</span></a></li>
+                    <li>
+                        <a href="blog.html">
+                            Browse all posts <span>&rarr;</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
-        </div>
+        </section>
 
-        <div class="cards-grid">
-            <div class="card kids">
+        <main class="cards-grid">
+
+            <section class="card kids">
                 <div class="card-content">
                     <div class="card-icon">✨</div>
                     <h2>Kids' Corner</h2>
-                    <p>Playful learning spaces designed for early growth, structured writing, and joyful discovery.</p>
+                    <p>
+                        Playful learning resources designed to support early
+                        growth, writing practice, and joyful discovery.
+                    </p>
+
                     <ul class="card-links">
-                        <li><span class="section-label">Interactive Educational App</span></li>
-                        <li><a href="https://sprout-lab.pages.dev/" target="_blank" rel="noopener noreferrer">Sprout Lab <span>—</span></a></li>
-                        <li><span class="section-label">Educational Printables</span></li>
-                        <li><a href="https://spelling-and-writing-practice-worksheet.pages.dev/" target="_blank" rel="noopener noreferrer">Spelling and Writing practice <span>—</span></a></li>
+                        <li>
+                            <span class="section-label">Interactive Learning App</span>
+                        </li>
+                        <li>
+                            <a href="https://sprout-lab.pages.dev/"
+                               target="_blank" rel="noopener noreferrer">
+                                Sprout Lab <span>&rarr;</span>
+                            </a>
+                        </li>
+                        <li>
+                            <span class="section-label">Educational Printables</span>
+                        </li>
+                        <li>
+                            <a href="https://spelling-and-writing-practice-worksheet.pages.dev/"
+                               target="_blank" rel="noopener noreferrer">
+                                Spelling and Writing Practice <span>&rarr;</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
-            </div>
+            </section>
 
-            <div class="card mom">
+            <section class="card home">
                 <div class="card-content">
                     <div class="card-icon">🌿</div>
-                    <h2>Mom & Home Space</h2>
-                    <p>Thoughtful templates, family rhythms, and quiet spaces designed to support you.</p>
+                    <h2>Home & Everyday</h2>
+                    <p>
+                        Thoughtful creative projects and practical resources
+                        for hobbies, home life, and everyday routines.
+                    </p>
+
                     <ul class="card-links">
-                        <li><span class="section-label">Interactive Craft Apps</span></li>
-                        <li><a href="https://stitch-minded.pages.dev/" target="_blank" rel="noopener noreferrer">Stitch Minded <span>&rarr;</span></a></li>
+                        <li>
+                            <span class="section-label">Interactive Craft App</span>
+                        </li>
+                        <li>
+                            <a href="https://stitch-minded.pages.dev/"
+                               target="_blank" rel="noopener noreferrer">
+                                Stitch Minded <span>&rarr;</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
-            </div>
+            </section>
 
-            <div class="card ai">
+            <section class="card ai">
                 <div class="card-content">
                     <div class="card-icon">💡</div>
-                    <h2>AI Creations & Tools</h2>
-                    <p>A space dedicated to creative prompt experiments, artwork galleries, and visual storytelling from the studio.</p>
+                    <h2>Creative AI & Digital Tools</h2>
+                    <p>
+                        A growing collection of creative prompt experiments,
+                        AI-assisted artwork, digital tools, and visual ideas.
+                    </p>
+
                     <ul class="card-links">
-                        <li><span class="section-label">Coming Soon</span></li>
-                        <li><span style="color: #96836f; font-size: 0.9rem;">Gallery & Prompts in progress</span></li>
+                        <li>
+                            <span class="section-label">Creative Studio</span>
+                        </li>
+                        <li>
+                            <span style="color: #96836f; font-size: 0.9rem;">
+                                Prompt Pixie and other projects are in development.
+                            </span>
+                        </li>
                     </ul>
                 </div>
-            </div>
-        </div>
+            </section>
+
+            <section class="card nook">
+                <div class="card-content">
+                    <div class="card-icon">✿</div>
+                    <h2>Kirst's Nook</h2>
+                    <span class="status-note">In Development</span>
+                    <p>
+                        A little help with the details. Practical digital
+                        support, organised information, spreadsheet tidying,
+                        and useful resources for small businesses and
+                        independent workers.
+                    </p>
+
+                    <ul class="card-links">
+                        <li>
+                            <span class="section-label">Freelance Digital Support</span>
+                        </li>
+                        <li>
+                            <a href="https://web.facebook.com/KirstsNook?_rdc=1&amp;_rdr#"
+                               target="_blank" rel="noopener noreferrer">
+                                Kirst's Nook on Facebook <span>&rarr;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
 
         <footer>
             <div>
-                <strong>Wintosy</strong><br>
-                <span>Built with care for parents, kids, and homes.</span>
+                <strong>Digital Wintosy</strong><br>
+                <span>Creative ideas, digital tools, and useful resources.</span>
             </div>
+
             <div class="footer-links">
-                <a href="mailto:wintosyway@gmail.com">Email Me</a>
-                <a href="https://facebook.com/wintosycorner" target="_blank" rel="noopener noreferrer">wintosycorner</a>
+                <a href="mailto:digitallykirst@gmail.com">Email</a>
+                <a href="https://web.facebook.com/KirstsNook?_rdc=1&amp;_rdr#"
+                   target="_blank" rel="noopener noreferrer">
+                    Kirst's Nook on Facebook
+                </a>
             </div>
         </footer>
-    </div>
 
+    </div>
 </body>
 </html>
-
-
-
